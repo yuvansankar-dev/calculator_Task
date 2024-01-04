@@ -32,6 +32,9 @@ body {
   border-radius: 5px;
   font-size: 18px;
   margin-bottom: 40px;
+  width: 100%;
+  text-align: end;
+  border-width: 1px;
 }
 .numberButton {
   background-color: #585a66;
@@ -55,6 +58,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-width: 0px;
 }
 .col-3 {
   display: flex;
