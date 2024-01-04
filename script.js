@@ -28,7 +28,7 @@ function reset() {
     lastResult: 0,
     operation: "",
   };
-  resultPart.innerHTML = result.lastResult;
+  resultPart.value = result.lastResult;
   calculationPart.innerHTML = "";
 }
 
