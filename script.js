@@ -20,7 +20,7 @@ function showResult() {
   splitedCalculation.forEach((value) => {
     setResultValue(value, /[0-9]/.test(value));
   });
-  resultPart.innerHTML = result.lastResult;
+  resultPart.value = result.lastResult;
 }
 function reset() {
   result = {
@@ -75,6 +75,7 @@ var buttonArray = [
   {
     value: "+",
     style: "operationButton",
+    id: "add",
   },
   {
     value: "4",
@@ -91,6 +92,7 @@ var buttonArray = [
   {
     value: "-",
     style: "operationButton",
+    id: "subtract",
   },
   {
     value: "1",
@@ -107,11 +109,13 @@ var buttonArray = [
   {
     value: "*",
     style: "operationButton",
+    id: "multiple",
   },
   {
     value: "C",
     clickFunction: reset,
-    style: "cancelButton",
+    style: "clear",
+    id: "clear",
   },
   {
     value: "0",
@@ -121,10 +125,12 @@ var buttonArray = [
     value: "=",
     clickFunction: showResult,
     style: "resultButton",
+    id: "equal",
   },
   {
     value: "/",
     style: "operationButton",
+    id: "division",
   },
 ];
 
@@ -133,8 +139,9 @@ buttonArray.forEach((element) => {
   buttonContainer.className = "col-3";
   buttonContainer.style.marginBottom = "16px";
 
-  var button = document.createElement("div");
+  var button = document.createElement("button");
   button.className = element.style + " button";
+  button.id = element.id ?? element.value;
 
   button.onclick = element.clickFunction ?? valueOnClick;
   button.innerText = element.value;
