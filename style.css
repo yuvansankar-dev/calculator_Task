@@ -8,8 +8,9 @@
 }
 body {
   display: flex;
-  align-items: center;
+  justify-content: center;
   height: 100vh;
+  flex-direction: column;
 }
 
 #calculation {
@@ -39,7 +40,7 @@ body {
 .operationButton {
   background-color: yellow;
 }
-.cancelButton {
+.clear {
   background-color: red;
   color: white;
 }
@@ -59,4 +60,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+p,
+h1 {
+  text-align: center;
 }
